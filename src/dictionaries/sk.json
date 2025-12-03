@@ -1,0 +1,62 @@
+{
+    "hero": {
+        "title": "Prestaňte Budovať. Začnite Riešiť.",
+        "subtitle": "Klienti nekupujú automatizácie. Kupujú riešenia obchodných problémov. Diagnostikujeme váš chaos a vrátime vám čas do vášho dňa.",
+        "cta": "Získajte Svoj Čas Späť"
+    },
+    "problem": {
+        "title": "Operačný Chaos",
+        "description": "Väčšina majiteľov firiem sa pozrie na svoje operácie a vidí CHAOS. Viete, že veci by mohli byť lepšie, ale neviete presne určiť, čo je pokazené.",
+        "points": [
+            "Trávenie príliš veľa času manuálnymi úlohami",
+            "Zložité diagramy pracovných postupov, ktoré nefungujú",
+            "Technický žargón bez obchodných výsledkov",
+            "Stres a preťaženie"
+        ]
+    },
+    "solution": {
+        "title": "Kde Je Skutočná Hodnota",
+        "subtitle": "Nie v BUDOVANÍ — ale v DIAGNOSTIKE.",
+        "description": "Nepíšeme len skripty. Analyzujeme celú vašu infraštruktúru, aby sme našli úzke miesta, ktoré vás stoja peniaze a čas.",
+        "steps": [
+            {
+                "title": "Diagnostika",
+                "desc": "Identifikácia príčiny operačného trenia."
+            },
+            {
+                "title": "Automatizácia",
+                "desc": "Implementácia robustnej, samo-opravnej infraštruktúry."
+            },
+            {
+                "title": "Škálovanie",
+                "desc": "Rast bez rastových bolestí."
+            }
+        ]
+    },
+    "services": {
+        "title": "Naša Expertíza",
+        "items": [
+            {
+                "title": "AI-Ops & Automatizácia",
+                "desc": "Inteligentná automatizácia, ktorá sa prispôsobí vašim obchodným potrebám."
+            },
+            {
+                "title": "Cloudová Infraštruktúra",
+                "desc": "Riešenia AWS/GCP, ktoré sú bezpečné, škálovateľné a nákladovo efektívne."
+            },
+            {
+                "title": "On-Prem Riešenia",
+                "desc": "Bezpečná interná infraštruktúra pre citlivé dáta a operácie."
+            }
+        ]
+    },
+    "about": {
+        "title": "Spoznajte Mike G.",
+        "role": "SRE & AI-Ops Architekt",
+        "desc": "Špecializácia na migráciu starších systémov na moderné kontajnerové architektúry a zavádzanie GitOps pracovných postupov."
+    },
+    "cta": {
+        "title": "Pripravení získať späť svoj čas?",
+        "button": "Kontaktujte Nás"
+    }
+}

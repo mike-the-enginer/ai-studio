@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "title": "Stop Building. Start Solving.",
+    "subtitle": "Clients don't buy automations. They buy solutions to business problems. We diagnose your chaos and engineer time back into your day.",
+    "cta": "Get Your Time Back"
+  },
+  "problem": {
+    "title": "The Operations Chaos",
+    "description": "Most business owners look at their operations and see CHAOS. You know things could be better, but you can't pinpoint exactly what's broken.",
+    "points": [
+      "Spending too much time on manual tasks",
+      "Complex workflow diagrams that don't work",
+      "Technical jargon without business results",
+      "Stress and overwhelm"
+    ]
+  },
+  "solution": {
+    "title": "Where The Real Value Is",
+    "subtitle": "Not in the BUILDING — in the DIAGNOSING.",
+    "description": "We don't just write scripts. We analyze your entire infrastructure to find the bottlenecks that are costing you money and time.",
+    "steps": [
+      {
+        "title": "Diagnose",
+        "desc": "Identify the root cause of operational friction."
+      },
+      {
+        "title": "Automate",
+        "desc": "Implement robust, self-healing infrastructure."
+      },
+      {
+        "title": "Scale",
+        "desc": "Grow without the growing pains."
+      }
+    ]
+  },
+  "services": {
+    "title": "Our Expertise",
+    "items": [
+      {
+        "title": "AI-Ops & Automation",
+        "desc": "Intelligent automation that adapts to your business needs."
+      },
+      {
+        "title": "Cloud Infrastructure",
+        "desc": "AWS/GCP solutions that are secure, scalable, and cost-effective."
+      },
+      {
+        "title": "On-Prem Solutions",
+        "desc": "Secure internal infrastructure for sensitive data and operations."
+      }
+    ]
+  },
+  "about": {
+    "title": "Meet Mike G.",
+    "role": "SRE & AI-Ops Architect",
+    "desc": "Specializing in migrating legacy systems to modern container architectures and establishing GitOps workflows."
+  },
+  "cta": {
+    "title": "Ready to reclaim your time?",
+    "button": "Contact Us"
+  }
+}
