@@ -1,21 +1,41 @@
 "use client";
 
 import Link from 'next/link';
-import { useState } from 'react';
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
 import { ThemeToggle } from './ThemeToggle';
 import styles from './Header.module.css';
 
 export default function Header({ dict, lang }: { dict: any, lang: string }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [mounted, setMounted] = useState(false);
+    const { resolvedTheme } = useTheme();
     const otherLang = lang === 'en' ? 'sk' : 'en';
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+    // Avoid hydration mismatch
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    const logoSrc = mounted
+        ? (resolvedTheme === 'dark' ? '/logo_dark.png' : '/logo_light.png')
+        : '/logo_light.png';
 
     return (
         <header className={`${styles.header} glass`}>
             <div className={`container ${styles.container}`}>
                 <Link href={`/${lang}`} className={styles.logo}>
-                    EU HUB <span style={{ color: 'var(--primary)', fontWeight: 'bold' }}>AI</span>
+                    <Image
+                        src={logoSrc}
+                        alt="EU HUB AI"
+                        fill
+                        sizes="(max-width: 768px) 100px, 140px"
+                        style={{ objectFit: 'contain' }}
+                        priority
+                    />
                 </Link>
 
                 <button

@@ -17,10 +17,11 @@
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    position: relative;
+    width: 100px;
+    height: 32px;
     flex-shrink: 0;
+    display: block;
 }
 
 .nav {
@@ -151,7 +152,14 @@
     }
 
     .logo {
-        font-size: 1.25rem;
         z-index: 11;
+    }
+}
+
+/* Desktop: scale up logo */
+@media (min-width: 769px) {
+    .logo {
+        width: 140px;
+        height: 40px;
     }
 }
