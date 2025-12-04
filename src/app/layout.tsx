@@ -1,21 +1,31 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Plus_Jakarta_Sans, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-heading",
+  display: "swap",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "AI-Ops Studio | Automate Your Infrastructure",
-  description: "We don't just build automations. We solve business problems. Expert SRE & AI-Ops solutions for scaling businesses.",
+  title: "EuHub AI | Strategic AI Implementation",
+  description: "Your Strategic AI Implementation Partner in Central Europe. We engineer and deploy agentic AI systems.",
 };
 
 import { Providers } from "./providers";
-
-// ... imports
 
 export default function RootLayout({
   children,
@@ -24,7 +34,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${outfit.variable} antialiased`}>
+      <head>
+        <meta name="robots" content="noindex, nofollow" />
+      </head>
+      <body className={`${plusJakartaSans.variable} ${dmSans.variable} ${jetbrainsMono.variable} antialiased`}>
         <Providers>
           {children}
         </Providers>

@@ -1,33 +1,45 @@
-import styles from './Footer.module.css';
+import Link from 'next/link';
 
-export default function Footer() {
+export const Footer = ({ lang, dict }: { lang: string, dict: any }) => {
     return (
-        <footer className={styles.footer} id="contact">
-            <div className="container">
-                <div className={styles.grid}>
+        <footer className="border-t border-[var(--card-border)] bg-[var(--background)] pt-16 pb-8">
+            <div className="container mx-auto px-4">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                    <div className="col-span-1 md:col-span-2">
+                        <Link href={`/${lang}`} className="text-2xl font-bold tracking-tight mb-4 block">
+                            EuHub<span className="text-[var(--primary)]">.ai</span>
+                        </Link>
+                        <p className="text-[var(--muted-foreground)] max-w-md">
+                            {dict.footer?.tagline || "Your Strategic AI Implementation Partner in Central Europe."}
+                        </p>
+                    </div>
+
                     <div>
-                        <h3 className={styles.brand}>AI-Ops Studio</h3>
-                        <p className={styles.tagline}>Automating the future, today.</p>
+                        <h4 className="font-bold mb-4">{dict.nav?.services || 'Services'}</h4>
+                        <ul className="space-y-2 text-[var(--muted-foreground)]">
+                            <li><Link href="#" className="hover:text-[var(--primary)]">AI Audit</Link></li>
+                            <li><Link href="#" className="hover:text-[var(--primary)]">Automation</Link></li>
+                            <li><Link href="#" className="hover:text-[var(--primary)]">Compliance</Link></li>
+                        </ul>
                     </div>
 
-                    <div className={styles.links}>
-                        <h4>Contact</h4>
-                        <a href="mailto:hello@euhub.sk">hello@euhub.sk</a>
-                        <a href="tel:+421919028987">+421 919 028 987</a>
-                        <a href="https://wa.me/421919028987" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-                    </div>
-
-                    <div className={styles.links}>
-                        <h4>Social</h4>
-                        <a href="https://www.upwork.com/freelancers/~010ff50fa102581498" target="_blank" rel="noopener noreferrer">Upwork Profile</a>
-                        <a href="https://ai-ops.euhub.sk/" target="_blank" rel="noopener noreferrer">Mike G. Profile</a>
+                    <div>
+                        <h4 className="font-bold mb-4">{dict.nav?.contact || 'Contact'}</h4>
+                        <ul className="space-y-2 text-[var(--muted-foreground)]">
+                            <li>Bratislava, Slovakia</li>
+                            <li><a href="mailto:hello@euhub-ai.com" className="hover:text-[var(--primary)]">hello@euhub-ai.com</a></li>
+                        </ul>
                     </div>
                 </div>
 
-                <div className={styles.copyright}>
-                    © {new Date().getFullYear()} AI-Ops Studio. All rights reserved.
+                <div className="border-t border-[var(--card-border)] pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[var(--muted-foreground)]">
+                    <p>&copy; {new Date().getFullYear()} EuHub AI. All rights reserved.</p>
+                    <div className="flex gap-6">
+                        <Link href="#" className="hover:text-[var(--foreground)]">Privacy Policy</Link>
+                        <Link href="#" className="hover:text-[var(--foreground)]">Terms of Service</Link>
+                    </div>
                 </div>
             </div>
         </footer>
     );
-}
+};

@@ -1,62 +1,36 @@
 {
+  "nav": {
+    "services": "Strategic Services",
+    "about": "Expertise",
+    "contact": "Partner With Us"
+  },
   "hero": {
-    "title": "Stop Building. Start Solving.",
-    "subtitle": "Clients don't buy automations. They buy solutions to business problems. We diagnose your chaos and engineer time back into your day.",
-    "cta": "Get Your Time Back"
-  },
-  "problem": {
-    "title": "The Operations Chaos",
-    "description": "Most business owners look at their operations and see CHAOS. You know things could be better, but you can't pinpoint exactly what's broken.",
-    "points": [
-      "Spending too much time on manual tasks",
-      "Complex workflow diagrams that don't work",
-      "Technical jargon without business results",
-      "Stress and overwhelm"
-    ]
-  },
-  "solution": {
-    "title": "Where The Real Value Is",
-    "subtitle": "Not in the BUILDING — in the DIAGNOSING.",
-    "description": "We don't just write scripts. We analyze your entire infrastructure to find the bottlenecks that are costing you money and time.",
-    "steps": [
-      {
-        "title": "Diagnose",
-        "desc": "Identify the root cause of operational friction."
-      },
-      {
-        "title": "Automate",
-        "desc": "Implement robust, self-healing infrastructure."
-      },
-      {
-        "title": "Scale",
-        "desc": "Grow without the growing pains."
-      }
-    ]
+    "title": "Your Strategic AI Implementation Partner in Central Europe.",
+    "subtitle": "We don't just write code. We engineer agentic AI systems that scale with your governance requirements. Secure. Compliant. Future-proof.",
+    "cta": "Start Strategic Audit"
   },
   "services": {
-    "title": "Our Expertise",
+    "title": "Enterprise-Grade AI Infrastructure",
     "items": [
       {
-        "title": "AI-Ops & Automation",
-        "desc": "Intelligent automation that adapts to your business needs."
+        "title": "AI Readiness Audit",
+        "desc": "Comprehensive analysis of your data infrastructure, governance, and AI potential. We identify risks before they become liabilities."
       },
       {
-        "title": "Cloud Infrastructure",
-        "desc": "AWS/GCP solutions that are secure, scalable, and cost-effective."
+        "title": "Pilot Implementation",
+        "desc": "Rapid deployment of functional MVP agents. Test viability in 4 weeks with strict success metrics."
       },
       {
-        "title": "On-Prem Solutions",
-        "desc": "Secure internal infrastructure for sensitive data and operations."
+        "title": "Enterprise Transformation",
+        "desc": "Full-scale integration of custom LLMs and RAG pipelines. Built for security, compliance (EU AI Act), and massive scale."
       }
     ]
   },
-  "about": {
-    "title": "Meet Mike G.",
-    "role": "SRE & AI-Ops Architect",
-    "desc": "Specializing in migrating legacy systems to modern container architectures and establishing GitOps workflows."
-  },
   "cta": {
-    "title": "Ready to reclaim your time?",
-    "button": "Contact Us"
+    "title": "Ready to Scale Intelligently?",
+    "button": "Request Consultation"
+  },
+  "footer": {
+    "tagline": "Bridging the gap between Western capital and Central European engineering talent."
   }
 }

@@ -1,62 +1,36 @@
 {
+    "nav": {
+        "services": "Služby",
+        "about": "O nás",
+        "contact": "Kontakt"
+    },
     "hero": {
-        "title": "Prestaňte Budovať. Začnite Riešiť.",
-        "subtitle": "Klienti nekupujú automatizácie. Kupujú riešenia obchodných problémov. Diagnostikujeme váš chaos a vrátime vám čas do vášho dňa.",
-        "cta": "Získajte Svoj Čas Späť"
-    },
-    "problem": {
-        "title": "Operačný Chaos",
-        "description": "Väčšina majiteľov firiem sa pozrie na svoje operácie a vidí CHAOS. Viete, že veci by mohli byť lepšie, ale neviete presne určiť, čo je pokazené.",
-        "points": [
-            "Trávenie príliš veľa času manuálnymi úlohami",
-            "Zložité diagramy pracovných postupov, ktoré nefungujú",
-            "Technický žargón bez obchodných výsledkov",
-            "Stres a preťaženie"
-        ]
-    },
-    "solution": {
-        "title": "Kde Je Skutočná Hodnota",
-        "subtitle": "Nie v BUDOVANÍ — ale v DIAGNOSTIKE.",
-        "description": "Nepíšeme len skripty. Analyzujeme celú vašu infraštruktúru, aby sme našli úzke miesta, ktoré vás stoja peniaze a čas.",
-        "steps": [
-            {
-                "title": "Diagnostika",
-                "desc": "Identifikácia príčiny operačného trenia."
-            },
-            {
-                "title": "Automatizácia",
-                "desc": "Implementácia robustnej, samo-opravnej infraštruktúry."
-            },
-            {
-                "title": "Škálovanie",
-                "desc": "Rast bez rastových bolestí."
-            }
-        ]
+        "title": "Znížte náklady a chybovosť pomocou inteligentnej automatizácie.",
+        "subtitle": "Neplaťte za manuálnu prácu, ktorú zvládne AI. Zdiagnostikujeme vaše procesy a nasadíme riešenia, ktoré sa zaplatia samé.",
+        "cta": "Získať Audit Zadarmo"
     },
     "services": {
-        "title": "Naša Expertíza",
+        "title": "Riešenia s garantovanou návratnosťou",
         "items": [
             {
-                "title": "AI-Ops & Automatizácia",
-                "desc": "Inteligentná automatizácia, ktorá sa prispôsobí vašim obchodným potrebám."
+                "title": "Digitálny Audit",
+                "desc": "Zistite presne, kde vaša firma stráca peniaze. Identifikujeme procesy vhodné na automatizáciu a vypočítame návratnosť investície."
             },
             {
-                "title": "Cloudová Infraštruktúra",
-                "desc": "Riešenia AWS/GCP, ktoré sú bezpečné, škálovateľné a nákladovo efektívne."
+                "title": "Pilotný Projekt",
+                "desc": "Funkčné riešenie do 4 týždňov. Žiadne dlhé čakanie. Rýchle nasadenie chatbota alebo procesného agenta."
             },
             {
-                "title": "On-Prem Riešenia",
-                "desc": "Bezpečná interná infraštruktúra pre citlivé dáta a operácie."
+                "title": "Komplexná Implementácia",
+                "desc": "Plná automatizácia firmy. Využite financovanie z Plánu obnovy a Výzvy 2025. My sa postaráme o technológiu aj grantovú pripravenosť."
             }
         ]
     },
-    "about": {
-        "title": "Spoznajte Mike G.",
-        "role": "SRE & AI-Ops Architekt",
-        "desc": "Špecializácia na migráciu starších systémov na moderné kontajnerové architektúry a zavádzanie GitOps pracovných postupov."
-    },
     "cta": {
-        "title": "Pripravení získať späť svoj čas?",
-        "button": "Kontaktujte Nás"
+        "title": "Nechajte technológie pracovať za vás",
+        "button": "Dohodnúť Stretnutie"
+    },
+    "footer": {
+        "tagline": "Váš partner pre digitálnu transformáciu a automatizáciu na Slovensku."
     }
 }
