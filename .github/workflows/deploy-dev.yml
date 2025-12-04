@@ -35,6 +35,17 @@ jobs:
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
 
+      - name: Create Artifact Registry repository (if not exists)
+        run: |
+          gcloud artifacts repositories describe ai-studio-dev \
+            --location=${{ env.REGION }} \
+            --project=${{ env.PROJECT_ID }} 2>/dev/null || \
+          gcloud artifacts repositories create ai-studio-dev \
+            --repository-format=docker \
+            --location=${{ env.REGION }} \
+            --project=${{ env.PROJECT_ID }} \
+            --description="AI Studio Dev Docker images"
+
       - name: Configure Docker
         run: gcloud auth configure-docker europe-west1-docker.pkg.dev --quiet
 
@@ -75,3 +86,4 @@ jobs:
           region: ${{ env.REGION }}
           image: ${{ env.IMAGE }}:${{ needs.ci.outputs.image_tag }}
           project_id: ${{ env.PROJECT_ID }}
+          flags: '--allow-unauthenticated'
