@@ -29,7 +29,7 @@
 .desc {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #e2e8f0;
+    color: var(--foreground);
     max-width: 600px;
     margin: 0 auto;
 }

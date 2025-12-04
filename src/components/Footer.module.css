@@ -1,5 +1,5 @@
 .footer {
-    background: #000;
+    background: var(--card-bg);
     padding: 4rem 0 2rem;
     border-top: 1px solid var(--card-border);
 }
@@ -15,22 +15,22 @@
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    color: white;
+    color: var(--foreground);
 }
 
 .tagline {
-    color: #94a3b8;
+    color: var(--muted-foreground);
 }
 
 .links h4 {
-    color: white;
+    color: var(--foreground);
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
 }
 
 .links a {
     display: block;
-    color: #94a3b8;
+    color: var(--muted-foreground);
     margin-bottom: 0.75rem;
     transition: color 0.2s;
 }
@@ -41,7 +41,7 @@
 
 .copyright {
     text-align: center;
-    color: #64748b;
+    color: var(--muted-foreground);
     font-size: 0.9rem;
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);

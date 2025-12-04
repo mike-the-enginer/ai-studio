@@ -13,15 +13,21 @@ export const metadata: Metadata = {
   description: "We don't just build automations. We solve business problems. Expert SRE & AI-Ops solutions for scaling businesses.",
 };
 
+import { Providers } from "./providers";
+
+// ... imports
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${outfit.variable} antialiased`}>
-        {children}
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );

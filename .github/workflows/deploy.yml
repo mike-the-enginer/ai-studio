@@ -1,67 +1,55 @@
-name: Build and Push to GCP Artifact Registry
+name: Deploy to Cloud Run
 
 on:
   push:
     branches:
       - main
-      - master
-  workflow_dispatch:
 
 env:
-  GCP_REGION: europe-west1
-  GCP_PROJECT_ID: webapp-473913
-  REPOSITORY: ai-studio
-  IMAGE_NAME: ai-studio-app
+  PROJECT_ID: webapp-473913
+  REGION: europe-west1
+  SERVICE: ai-studio
 
 jobs:
-  build-and-push:
+  deploy:
     runs-on: ubuntu-latest
-    
+
     permissions:
-      contents: read
-      id-token: write
+      contents: 'read'
+      id-token: 'write'
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Authenticate to Google Cloud
-        uses: google-github-actions/auth@v2
-        with:
-          credentials_json: ${{ secrets.GCP_SA_KEY }}
+      # NOTE: Alternative option - Authentication via Service Account Key JSON
+      # If you prefer using a Service Account Key JSON instead of WIF,
+      # uncomment the following block and add your key to GitHub Secrets as GCP_CREDENTIALS
+      #
+      # - name: Google Auth
+      #   id: auth
+      #   uses: 'google-github-actions/auth@v2'
+      #   with:
+      #     credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
 
+      # NOTE: Recommended option - Workload Identity Federation
+      # Uncomment and configure if using WIF (more secure)
+      # - name: Google Auth
+      #   id: auth
+      #   uses: 'google-github-actions/auth@v2'
+      #   with:
+      #     workload_identity_provider: 'projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
+      #     service_account: 'my-service-account@${{ env.PROJECT_ID }}.iam.gserviceaccount.com'
+
+      # Setup gcloud CLI
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
 
-      - name: Configure Docker to use gcloud as credential helper
-        run: |
-          gcloud auth configure-docker ${{ env.GCP_REGION }}-docker.pkg.dev
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: Extract metadata (tags, labels)
-        id: meta
-        uses: docker/metadata-action@v5
+      # Build and Deploy
+      - name: Deploy to Cloud Run
+        uses: google-github-actions/deploy-cloudrun@v2
         with:
-          images: ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.IMAGE_NAME }}
-          tags: |
-            type=ref,event=branch
-            type=sha,prefix={{branch}}-
-            type=raw,value=latest,enable={{is_default_branch}}
-
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-          platforms: linux/amd64
-
-      - name: Output image URL
-        run: |
-          echo "Image pushed to:"
-          echo "${{ steps.meta.outputs.tags }}"
+          service: ${{ env.SERVICE }}
+          region: ${{ env.REGION }}
+          source: .
+          project_id: ${{ env.PROJECT_ID }}

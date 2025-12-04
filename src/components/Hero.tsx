@@ -2,7 +2,12 @@ import styles from './Hero.module.css';
 
 export default function Hero({ dict }: { dict: any }) {
     return (
-        <section className={styles.hero}>
+        <section
+            className={styles.hero}
+            style={{
+                backgroundImage: `var(--hero-overlay), var(--hero-bg-url)`
+            }}
+        >
             <div className={styles.glow} />
             <div className="container">
                 <div className={styles.content}>
