@@ -11,6 +11,15 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+
+  async rewrites() {
+    return [
+      {
+        source: '/api/proxy/:path*',
+        destination: 'https://example.com/api/:path*', // TODO: Replace with your actual target URL
+      },
+    ];
+  },
 };
 
 export default nextConfig;
