@@ -29,7 +29,7 @@ export default async function Home({
         <About dict={dict.about} />
       </section>
       <CTA dict={dict.cta} />
-      <Footer />
+      <Footer lang={lang} />
     </main>
   );
 }

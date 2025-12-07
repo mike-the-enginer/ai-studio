@@ -30,7 +30,7 @@ export default function Header({ dict, lang }: { dict: any, lang: string }) {
                 <Link href={`/${lang}`} className={styles.logo}>
                     <Image
                         src={logoSrc}
-                        alt="EU HUB AI"
+                        alt="EUHub AI Studio"
                         fill
                         sizes="(max-width: 768px) 100px, 140px"
                         style={{ objectFit: 'contain' }}

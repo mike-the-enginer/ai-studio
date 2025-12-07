@@ -9,11 +9,12 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "AI-Ops Studio | Automate Your Infrastructure",
+  title: "EUHub AI Studio | Automate Your Infrastructure",
   description: "We don't just build automations. We solve business problems. Expert SRE & AI-Ops solutions for scaling businesses.",
 };
 
 import { Providers } from "./providers";
+import CookieBanner from "@/components/CookieBanner";
 
 // ... imports
 
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body className={`${outfit.variable} antialiased`}>
         <Providers>
           {children}
+          <CookieBanner />
         </Providers>
       </body>
     </html>
