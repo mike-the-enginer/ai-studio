@@ -1,13 +1,31 @@
+'use client';
+
 import Link from 'next/link';
+import Image from 'next/image';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 export const Footer = ({ lang, dict }: { lang: string, dict: any }) => {
+    const [mounted, setMounted] = useState(false);
+    const { resolvedTheme } = useTheme();
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
     return (
         <footer className="border-t border-[var(--card-border)] bg-[var(--background)] pt-16 pb-8">
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                     <div className="col-span-1 md:col-span-2">
-                        <Link href={`/${lang}`} className="text-2xl font-bold tracking-tight mb-4 block">
-                            EuHub<span className="text-[var(--primary)]">.ai</span>
+                        <Link href={`/${lang}`} className="relative w-[100px] h-[42px] flex-shrink-0 block mb-4">
+                            <Image
+                                src={mounted ? (resolvedTheme === 'dark' ? '/logo_dark.png' : '/logo_light.png') : '/logo_light.png'}
+                                alt="EU HUB AI"
+                                fill
+                                sizes="100px"
+                                style={{ objectFit: 'contain' }}
+                                priority
+                            />
                         </Link>
                         <p className="text-[var(--muted-foreground)] max-w-md">
                             {dict.footer?.tagline || "Your Strategic AI Implementation Partner in Central Europe."}
@@ -26,8 +44,8 @@ export const Footer = ({ lang, dict }: { lang: string, dict: any }) => {
                     <div>
                         <h4 className="font-bold mb-4">{dict.nav?.contact || 'Contact'}</h4>
                         <ul className="space-y-2 text-[var(--muted-foreground)]">
-                            <li>Bratislava, Slovakia</li>
-                            <li><a href="mailto:hello@euhub-ai.com" className="hover:text-[var(--primary)]">hello@euhub-ai.com</a></li>
+                            <li>974 01, Banská Bystrica, Slovakia</li>
+                            <li><a href="mailto:hello@euhub.sk" className="hover:text-[var(--primary)]">hello@euhub.sk</a></li>
                         </ul>
                     </div>
                 </div>
@@ -35,8 +53,9 @@ export const Footer = ({ lang, dict }: { lang: string, dict: any }) => {
                 <div className="border-t border-[var(--card-border)] pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[var(--muted-foreground)]">
                     <p>&copy; {new Date().getFullYear()} EuHub AI. All rights reserved.</p>
                     <div className="flex gap-6">
-                        <Link href="#" className="hover:text-[var(--foreground)]">Privacy Policy</Link>
-                        <Link href="#" className="hover:text-[var(--foreground)]">Terms of Service</Link>
+                        <Link href={`/${lang}/privacy`} className="hover:text-[var(--foreground)] transition-colors">Privacy Policy</Link>
+                        <Link href={`/${lang}/terms`} className="hover:text-[var(--foreground)] transition-colors">Terms of Service</Link>
+                        <Link href={`/${lang}/cookie`} className="hover:text-[var(--foreground)] transition-colors">Cookie Policy</Link>
                     </div>
                 </div>
             </div>

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  /* Digital Comfort Palette */
+  /* Digital Comfort Palette - Dark Theme (Default) */
   --background: #0B1120;
   /* Midnight Navy */
   --foreground: #F5F5F4;
@@ -36,12 +36,20 @@
   --header-height: 80px;
 }
 
-/* We are enforcing a dark-themed "Digital Comfort" look by default, 
-   so we map the same variables or slight variations if light mode is ever needed,
-   but for now, the brand identity is dark. */
-[class="dark"] {
-  --background: #0B1120;
-  --foreground: #F5F5F4;
+/* Light Mode */
+[class="light"] {
+  --background: #FFFFFF;
+  --foreground: #0B1120;
+  --primary: #6366F1;
+  --primary-glow: rgba(99, 102, 241, 0.15);
+  --secondary: #F3F4F6;
+  --secondary-glow: rgba(99, 102, 241, 0.05);
+  --accent: #14B8A6;
+  --accent-glow: rgba(20, 184, 166, 0.15);
+  --card-bg: rgba(243, 244, 246, 0.7);
+  --card-border: rgba(11, 17, 32, 0.1);
+  --card-hover: rgba(99, 102, 241, 0.05);
+  --muted-foreground: #64748b;
 }
 
 * {
@@ -112,11 +120,11 @@ a {
   transition: all 0.3s ease;
   cursor: pointer;
   border: none;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: var(--primary);
   color: white;
   box-shadow: 0 0 20px var(--primary-glow);
 }

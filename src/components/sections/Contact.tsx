@@ -1,4 +1,4 @@
-import { GlassCard } from './GlassCard';
+import { GlassCard } from '../shared/GlassCard';
 
 export const Contact = ({ lang, dict }: { lang: string, dict: any }) => {
     return (
@@ -22,7 +22,7 @@ export const Contact = ({ lang, dict }: { lang: string, dict: any }) => {
                                 </div>
                                 <div>
                                     <div className="font-bold">Email</div>
-                                    <a href="mailto:hello@euhub-ai.com" className="text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors">hello@euhub-ai.com</a>
+                                    <a href="mailto:hello@euhub.sk" className="text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors">hello@euhub.sk</a>
                                 </div>
                             </div>
                             <div className="flex items-center gap-4">
@@ -31,7 +31,7 @@ export const Contact = ({ lang, dict }: { lang: string, dict: any }) => {
                                 </div>
                                 <div>
                                     <div className="font-bold">{lang === 'sk' ? 'Lokácia' : 'Location'}</div>
-                                    <span className="text-[var(--muted-foreground)]">Bratislava, Slovakia (EU)</span>
+                                    <span className="text-[var(--muted-foreground)]">974 01, Banská Bystrica, Slovakia (EU)</span>
                                 </div>
                             </div>
                         </div>

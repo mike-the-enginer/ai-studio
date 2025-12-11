@@ -1,5 +1,5 @@
-import { BentoGrid, BentoItem } from './BentoGrid';
-import { GlassCard } from './GlassCard';
+import { BentoGrid, BentoItem } from '../shared/BentoGrid';
+import { GlassCard } from '../shared/GlassCard';
 
 export const Services = ({ lang, dict }: { lang: string, dict: any }) => {
     return (

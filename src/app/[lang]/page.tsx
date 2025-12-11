@@ -1,9 +1,9 @@
 import { getDictionary } from '../../get-dictionary';
-import { Navbar } from '../../components/Navbar';
-import { Hero } from '../../components/Hero';
-import { Services } from '../../components/Services';
-import { Contact } from '../../components/Contact';
-import { Footer } from '../../components/Footer';
+import { Navbar } from '../../components/navigation/Navbar';
+import { Hero } from '../../components/sections/Hero';
+import { Services } from '../../components/sections/Services';
+import { Contact } from '../../components/sections/Contact';
+import { Footer } from '../../components/layout/Footer';
 
 export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;

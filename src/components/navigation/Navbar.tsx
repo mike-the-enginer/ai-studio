@@ -1,29 +1,40 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
+import { ThemeToggle } from './ThemeToggle';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 export const Navbar = ({ lang, dict }: { lang: string, dict: any }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const pathname = usePathname();
+    const [mounted, setMounted] = useState(false);
+    const { resolvedTheme } = useTheme();
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
-    // Helper to switch language in URL
-    const switchLang = (newLang: string) => {
-        if (!pathname) return `/${newLang}`;
-        const segments = pathname.split('/');
-        segments[1] = newLang;
-        return segments.join('/');
-    };
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    function switchLang(arg0: string): string | import("url").UrlObject {
+        throw new Error('Function not implemented.');
+    }
 
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-[var(--card-border)]">
             <div className="container mx-auto px-4 h-[var(--header-height)] flex items-center justify-between">
                 {/* Logo */}
-                <Link href={`/${lang}`} className="text-2xl font-bold tracking-tight">
-                    EuHub<span className="text-[var(--primary)]">.ai</span>
+                <Link href={`/${lang}`} className="relative w-[100px] h-[42px] flex-shrink-0 block">
+                    <Image
+                        src={mounted ? (resolvedTheme === 'dark' ? '/logo_dark.png' : '/logo_light.png') : '/logo_light.png'}
+                        alt="EU HUB AI"
+                        fill
+                        sizes="100px"
+                        style={{ objectFit: 'contain' }}
+                        priority
+                    />
                 </Link>
 
                 {/* Desktop Menu */}
@@ -38,21 +49,10 @@ export const Navbar = ({ lang, dict }: { lang: string, dict: any }) => {
                         {dict.nav?.contact || 'Contact'}
                     </Link>
 
-                    {/* Language Switcher */}
+                    {/* Language Switcher & Theme Toggle */}
                     <div className="flex items-center gap-2 ml-4 border-l border-[var(--card-border)] pl-4">
-                        <Link
-                            href={switchLang('en')}
-                            className={`text-xs font-bold ${lang === 'en' ? 'text-[var(--primary)]' : 'text-[var(--muted-foreground)] hover:text-[var(--foreground)]'}`}
-                        >
-                            EN
-                        </Link>
-                        <span className="text-[var(--muted-foreground)]">/</span>
-                        <Link
-                            href={switchLang('sk')}
-                            className={`text-xs font-bold ${lang === 'sk' ? 'text-[var(--primary)]' : 'text-[var(--muted-foreground)] hover:text-[var(--foreground)]'}`}
-                        >
-                            SK
-                        </Link>
+                        <ThemeToggle />
+                        <LanguageSwitcher lang={lang} />
                     </div>
                 </div>
 
