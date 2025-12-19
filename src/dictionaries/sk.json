@@ -1,12 +1,12 @@
 {
     "nav": {
         "services": "Služby",
-        "about": "O nás",
+        "team": "Tím",
         "contact": "Kontakt"
     },
     "hero": {
         "title": "Znížte náklady a chybovosť pomocou inteligentnej automatizácie.",
-        "subtitle": "Neplaťte za manuálnu prácu, ktorú zvládne AI. Zdiagnostikujeme vaše procesy a nasadíme riešenia, ktoré sa zaplatia samé.",
+        "subtitle": "Udržiavajte úplnú kontrolu nad svojimi rizikami. Náš audit identifikuje zraniteľnosti vo vašej infraštruktúre a potenciál AI ešte predtým, než sa stanú záväzkami.",
         "cta": "Získať Audit Zadarmo"
     },
     "services": {
@@ -23,6 +23,27 @@
             {
                 "title": "Komplexná Implementácia",
                 "desc": "Plná automatizácia firmy. Využite financovanie z Plánu obnovy a Výzvy 2025. My sa postaráme o technológiu aj grantovú pripravenosť."
+            }
+        ]
+    },
+    "team": {
+        "title": "Spoznajte našich expertov",
+        "subtitle": "Tím, ktorý stojí za vašou úspešnou implementáciou AI.",
+        "members": [
+            {
+                "name": "Michal Kováč",
+                "role": "Chief AI Solutions Architect",
+                "description": "Špecialista na rozsiahle RAG systémy a správu multi-agentových riešení."
+            },
+            {
+                "name": "Zuzana Horváthová",
+                "role": "Vedúca AI Compliance",
+                "description": "Právna expertka so zameraním na EU AI Act a etické nasadzovanie AI."
+            },
+            {
+                "name": "Jakub Molnár",
+                "role": "Infrastructure & Security Lead",
+                "description": "Zameriava sa na privátne cloudové LLM riešenia a SOC2-kompatibilné systémy."
             }
         ]
     },

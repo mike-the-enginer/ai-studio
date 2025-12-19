@@ -42,8 +42,8 @@ export const Navbar = ({ lang, dict }: { lang: string, dict: any }) => {
                     <Link href={`/${lang}#services`} className="text-sm font-medium hover:text-[var(--primary)] transition-colors">
                         {dict.nav?.services || 'Services'}
                     </Link>
-                    <Link href={`/${lang}#about`} className="text-sm font-medium hover:text-[var(--primary)] transition-colors">
-                        {dict.nav?.about || 'About'}
+                    <Link href={`/${lang}#team`} className="text-sm font-medium hover:text-[var(--primary)] transition-colors">
+                        {dict.nav?.team || 'Team'}
                     </Link>
                     <Link href={`/${lang}#contact`} className="btn btn-primary text-sm px-6 py-2 rounded-full">
                         {dict.nav?.contact || 'Contact'}
@@ -71,8 +71,8 @@ export const Navbar = ({ lang, dict }: { lang: string, dict: any }) => {
                         <Link href={`/${lang}#services`} onClick={toggleMenu} className="text-lg font-medium">
                             {dict.nav?.services || 'Services'}
                         </Link>
-                        <Link href={`/${lang}#about`} onClick={toggleMenu} className="text-lg font-medium">
-                            {dict.nav?.about || 'About'}
+                        <Link href={`/${lang}#team`} onClick={toggleMenu} className="text-lg font-medium">
+                            {dict.nav?.team || 'Team'}
                         </Link>
                         <Link href={`/${lang}#contact`} onClick={toggleMenu} className="text-lg font-medium text-[var(--primary)]">
                             {dict.nav?.contact || 'Contact'}

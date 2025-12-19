@@ -1,12 +1,12 @@
 {
   "nav": {
     "services": "Strategic Services",
-    "about": "Expertise",
+    "team": "Team",
     "contact": "Partner With Us"
   },
   "hero": {
     "title": "Your Strategic AI Implementation Partner in Central Europe.",
-    "subtitle": "We don't just write code. We engineer agentic AI systems that scale with your governance requirements. Secure. Compliant. Future-proof.",
+    "subtitle": "Maintain full control over your risks. Our audit identifies vulnerabilities in your infrastructure and AI potential before they become liabilities.",
     "cta": "Start Strategic Audit"
   },
   "services": {
@@ -23,6 +23,27 @@
       {
         "title": "Enterprise Transformation",
         "desc": "Full-scale integration of custom LLMs and RAG pipelines. Built for security, compliance (EU AI Act), and massive scale."
+      }
+    ]
+  },
+  "team": {
+    "title": "Meet Our Experts",
+    "subtitle": "The brains behind your strategic AI implementation.",
+    "members": [
+      {
+        "name": "Michal Kováč",
+        "role": "Chief AI Solutions Architect",
+        "description": "Specialist in large-scale RAG systems and multi-agent governance."
+      },
+      {
+        "name": "Zuzana Horváthová",
+        "role": "Head of AI Compliance",
+        "description": "Legal expert specializing in the EU AI Act and ethical AI deployment."
+      },
+      {
+        "name": "Jakub Molnár",
+        "role": "Infrastructure & Security Lead",
+        "description": "Focuses on private cloud LLM deployments and SOC2-compliant pipelines."
       }
     ]
   },

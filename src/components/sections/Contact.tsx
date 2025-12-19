@@ -1,6 +1,11 @@
+'use client';
+
 import { GlassCard } from '../shared/GlassCard';
+import { useForm, ValidationError } from '@formspree/react';
 
 export const Contact = ({ lang, dict }: { lang: string, dict: any }) => {
+    const [state, handleSubmit] = useForm("xwveprkv");
+
     return (
         <section id="contact" className="section-padding">
             <div className="container mx-auto px-4">
@@ -41,29 +46,65 @@ export const Contact = ({ lang, dict }: { lang: string, dict: any }) => {
                         <h3 className="text-xl font-bold mb-4">
                             {lang === 'sk' ? 'Získajte Audit Zadarmo' : 'Get a Free Audit'}
                         </h3>
-                        <form className="space-y-4">
-                            <div>
-                                <label className="block text-sm font-medium mb-1 text-[var(--muted-foreground)]">
-                                    {lang === 'sk' ? 'Meno' : 'Name'}
-                                </label>
-                                <input type="text" className="w-full px-4 py-2 rounded-lg bg-[rgba(0,0,0,0.2)] border border-[var(--card-border)] focus:border-[var(--primary)] focus:outline-none transition-colors" />
+                        {state.succeeded ? (
+                            <div className="text-center py-8">
+                                <div className="w-16 h-16 bg-[rgba(20,184,166,0.1)] text-[var(--primary)] rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                                    ✓
+                                </div>
+                                <h4 className="text-xl font-bold mb-2">
+                                    {lang === 'sk' ? 'Ďakujeme!' : 'Thank you!'}
+                                </h4>
+                                <p className="text-[var(--muted-foreground)]">
+                                    {lang === 'sk'
+                                        ? 'Vaša správa bola odoslaná. Čoskoro sa vám ozveme.'
+                                        : 'Your message has been sent. We will be in touch shortly.'}
+                                </p>
                             </div>
-                            <div>
-                                <label className="block text-sm font-medium mb-1 text-[var(--muted-foreground)]">
-                                    Email
-                                </label>
-                                <input type="email" className="w-full px-4 py-2 rounded-lg bg-[rgba(0,0,0,0.2)] border border-[var(--card-border)] focus:border-[var(--primary)] focus:outline-none transition-colors" />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-medium mb-1 text-[var(--muted-foreground)]">
-                                    {lang === 'sk' ? 'Správa' : 'Message'}
-                                </label>
-                                <textarea rows={4} className="w-full px-4 py-2 rounded-lg bg-[rgba(0,0,0,0.2)] border border-[var(--card-border)] focus:border-[var(--primary)] focus:outline-none transition-colors"></textarea>
-                            </div>
-                            <button type="submit" className="w-full btn btn-primary">
-                                {dict.cta.button}
-                            </button>
-                        </form>
+                        ) : (
+                            <form onSubmit={handleSubmit} className="space-y-4">
+                                <div>
+                                    <label htmlFor="name" className="block text-sm font-medium mb-1 text-[var(--muted-foreground)]">
+                                        {lang === 'sk' ? 'Meno' : 'Name'}
+                                    </label>
+                                    <input
+                                        id="name"
+                                        type="text"
+                                        name="name"
+                                        className="w-full px-4 py-2 rounded-lg bg-[rgba(0,0,0,0.2)] border border-[var(--card-border)] focus:border-[var(--primary)] focus:outline-none transition-colors"
+                                    />
+                                    <ValidationError prefix="Name" field="name" errors={state.errors} className="text-red-500 text-sm mt-1" />
+                                </div>
+                                <div>
+                                    <label htmlFor="email" className="block text-sm font-medium mb-1 text-[var(--muted-foreground)]">
+                                        Email
+                                    </label>
+                                    <input
+                                        id="email"
+                                        type="email"
+                                        name="email"
+                                        className="w-full px-4 py-2 rounded-lg bg-[rgba(0,0,0,0.2)] border border-[var(--card-border)] focus:border-[var(--primary)] focus:outline-none transition-colors"
+                                    />
+                                    <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-500 text-sm mt-1" />
+                                </div>
+                                <div>
+                                    <label htmlFor="message" className="block text-sm font-medium mb-1 text-[var(--muted-foreground)]">
+                                        {lang === 'sk' ? 'Správa' : 'Message'}
+                                    </label>
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        rows={4}
+                                        className="w-full px-4 py-2 rounded-lg bg-[rgba(0,0,0,0.2)] border border-[var(--card-border)] focus:border-[var(--primary)] focus:outline-none transition-colors"
+                                    ></textarea>
+                                    <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-500 text-sm mt-1" />
+                                </div>
+                                <button type="submit" disabled={state.submitting} className="w-full btn btn-primary disabled:opacity-50 disabled:cursor-not-allowed">
+                                    {state.submitting
+                                        ? (lang === 'sk' ? 'Odosielam...' : 'Sending...')
+                                        : dict.cta.button}
+                                </button>
+                            </form>
+                        )}
                     </GlassCard>
                 </div>
             </div>

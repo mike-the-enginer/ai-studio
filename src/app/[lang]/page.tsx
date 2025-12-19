@@ -2,6 +2,7 @@ import { getDictionary } from '../../get-dictionary';
 import { Navbar } from '../../components/navigation/Navbar';
 import { Hero } from '../../components/sections/Hero';
 import { Services } from '../../components/sections/Services';
+import { Team } from '../../components/sections/Team';
 import { Contact } from '../../components/sections/Contact';
 import { Footer } from '../../components/layout/Footer';
 
@@ -14,6 +15,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       <Navbar lang={lang} dict={dict} />
       <Hero lang={lang} dict={dict} />
       <Services lang={lang} dict={dict} />
+      <Team lang={lang} dict={dict} />
       <Contact lang={lang} dict={dict} />
       <Footer lang={lang} dict={dict} />
     </main>
